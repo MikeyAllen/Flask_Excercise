@@ -2,5 +2,17 @@
 <h1>Register</h1>
 <h4>Enter Student Information below</h4>
 <!--Form to request user's name-->
-
+<form>
+    <label for="name">Enter name:</label>
+    <input type="text" name="name" id="name">
+    <label for="organisation">Enter organisation:</label>
+    <select id="organisation" name="organisation">
+        <option value="Code 9">Code 9</option>
+        <option value="CLT Hacks">CLT Hacks</option>
+        <option value="Runtime Terror">Runtime Terror</option>
+        <option value="FrontPage Freebirds">FrontPage Freebirds</option>
+        <option value="Women who code">Women who code</option>
+    </select>
+    <input type="submit" value="Register">
+</form>
 {% endblock %}
