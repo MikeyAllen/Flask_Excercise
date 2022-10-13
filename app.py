@@ -1,17 +1,17 @@
 from datetime import date
 from urllib import request
 from flask import Flask, render_template, request
-import datetime
+
 
 app = Flask(__name__)
 global studentOrganisationDetails
 # Assign default 5 values to studentOrganisationDetails for Application  3.
 
 
-@app.get('/')
+@app.route('/')
 def index():
     # Complete this function to get current date and time assign this value to currentDate, display this data on index.html
-    current = datetime()
+    currentDate = date.today()
     return render_template('index.html', currentDate=currentDate)
 
 
@@ -30,9 +30,7 @@ def checkNumber():
     # Display "Provided input is not an integer!" if value is not a number on result.html page
     global number
     number = request.form['number']
-    if (number/2==0){
-        
-    }
+    # if (number/2==0)
 
     # Write your to code here to check whether number is even or odd and render result.html page
 
