@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from urllib import request
 from flask import Flask, render_template, request
 import math
@@ -9,10 +9,11 @@ global studentOrganisationDetails
 # Assign default 5 values to studentOrganisationDetails for Application  3.
 studentOrganisationDetails = {}
 
-@app.route('/')
+@app.get('/')
 def index():
     # Complete this function to get current date and time assign this value to currentDate, display this data on index.html
-    currentDate = date.today()
+    date=datetime.now()
+    currentDate = date.strftime("%d-%m-%Y %h:%M:%S")
     return render_template('index.html', currentDate=currentDate)
 
 
@@ -65,4 +66,4 @@ def displayRegistrationPage():
     studentOrganisationDetails[studentName]= studentOrganisation
 
     # Display studentDetails.html with all students and organisations
-    return render_template('studentDetails.html', studentOrganisationDetails=studentOrganisationDetails)
+    return render_template('StudentDetails.html', studentOrganisationDetails=studentOrganisationDetails)
